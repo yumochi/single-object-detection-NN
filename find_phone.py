@@ -1,4 +1,3 @@
-# python3 find_phone.py ./find_phone_task_4/find_phone/51.jpg
 import cv2
 import sys
 import numpy as np 
@@ -8,16 +7,19 @@ from torch.autograd import Variable
 
 
 if __name__ == '__main__':
+	use_gpu = False
+	has_gpu = torch.cuda.is_available()
+	device = torch.device("cuda" if (has_gpu and use_gpu) else "cpu")
 	# var to change
 	# stride when slide window on image
 	# l is the fixed window size. In this problem I make this assumption
 	# because the given training images seem to have fixed size of iphone in view
-	stride = 46 # 1-46
 	l = 23
-
+	# stride choose between 1-46
+	stride = 46 if device=='cpu' else 2
 	# load model
 	from simpleCNN import Net 
-	device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 	# only load param 
 	# model = Net()
 	# model.load_state_dict(torch.load('trained.pth'))
@@ -42,7 +44,7 @@ if __name__ == '__main__':
 	        windows.append(window)
 
 	# infer
-	windows = Variable(torch.from_numpy(np.array(windows)).type(torch.FloatTensor))
+	windows = Variable(torch.from_numpy(np.array(windows)).type(torch.FloatTensor)).to(device)
 	scores = model(windows)
 	score, max_idx = torch.max(scores, 0)
 

@@ -18,8 +18,7 @@ def main():
 	root = sys.argv[1]
 
 	# test if gpu should be used
-	use_cuda = torch.cuda.is_available()
-	device = torch.device("cuda" if use_cuda else "cpu")
+	device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 	# data augmentation transformations
 	train_transformations = transforms.Compose([
