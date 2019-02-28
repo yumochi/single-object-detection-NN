@@ -1,66 +1,59 @@
 # Single Object Detection NN
 
-This is a simple project started by Dihan Yang and Yumo Chi to play around and learn about the basic object localization in images. We intend for this project to be stepping stone toward more complex structures.
+This is a simple project started by Dihan Yang and Yumo Chi to play around and learn about the basic object localization in images. We intend for this project to be stepping stone toward more complex structures. We will be working actively to expand this project.
+
+The project is based pyTorch, coupled with concepts inspired by YOLOv3. Our current work is based on a simple custom CNN and basic inference using bounding boxes. The original work was inspired by ayooshkathuria's work from his PaperSpace blog on https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/
 
 ## Getting Started
 
-Simply download repo to git started. The 
+The code in the repo is sufficient. Simply download repo to get started. 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+PyTorch
 
 ```
-Give examples
+conda install pytorch torchvision -c pytorch
 ```
+
+Refer to https://pytorch.org/ for detail
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+A series of python modules were used to create the project, including
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+torchvision
 
 ```
-until finished
+pip install torchvision
 ```
+Refer to https://pypi.org/project/torchvision/0.1.8/ for detail.
 
-End with an example of getting some data out of the system or using it for a little demo
+argparse
+
+```
+python setup.py install
+```
+Refer to https://pypi.org/project/argparse/ for detail.
+
+numpy
+
+```
+conda install numpy
+```
+Refer to http://www.numpy.org/ for detail
 
 ## Running the tests
 
 Explain how to run the automated tests for this system
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+To deploy the system, simply link
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [PyTorch](https://pytorch.org/) - An open source deep learning platform that provides a seamless path from research prototyping to production deployment.
 
 ## Contributing
 
@@ -68,7 +61,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
@@ -82,6 +75,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
+* Hat tip to ayooshkathuria
+* Inspiration drew from YOLOV3
 * etc
